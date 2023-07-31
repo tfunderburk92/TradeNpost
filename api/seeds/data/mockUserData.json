@@ -1,0 +1,58 @@
+[
+  {
+    "userId": 1,
+    "username": "dmcmoyer0",
+    "email": "dmcmoyer0@icq.com",
+    "passwordHash": "$2a$04$u1mfIRBkyXPwXlvCT.mlo.2HeRIAmeSC3TamtH86KFP1jrxFVdW1G",
+    "firstName": "Daron",
+    "lastName": "McMoyer",
+    "role": "user",
+    "created_at": "07/5/2023",
+    "modified_at": "12/5/2022"
+  },
+  {
+    "userId": 2,
+    "username": "vdeverehunt1",
+    "email": "vdeverehunt1@economist.com",
+    "passwordHash": "$2a$04$fhv25zMDTsW8FGm7GuQg2emsh8Xvvz2fWmLU5bsJVFYr3rBHvlhDi",
+    "firstName": "Vonny",
+    "lastName": "De'Vere - Hunt",
+    "role": "admin",
+    "created_at": "4/20/2023",
+    "modified_at": "4/20/2023"
+  },
+  {
+    "userId": 3,
+    "username": "mgorsse2",
+    "email": "mgorsse2@icq.com",
+    "passwordHash": "$2a$04$KPfLYgUR5Pwk.1wA.6C6seXG0cVPNRsN8kwAuEpZlkmRJG/D/A/Du",
+    "firstName": "Morty",
+    "lastName": "Gorsse",
+    "role": "user",
+    "created_at": "2/16/2023",
+    "modified_at": "2/16/2023"
+  },
+  {
+    "userId": 4,
+    "username": "gkopman3",
+    "email": "gkopman3@hhs.gov",
+    "passwordHash": "$2a$04$kq/7DJIvVF8owl74sSI6muri4XZL5GRXDYANqvsj3vVScRNT1t4RG",
+    "firstName": "Gale",
+    "lastName": "Kopman",
+    "role": "user",
+    "created_at": "9/24/2023",
+    "modified_at": "2/16/2023"
+  },
+  {
+    "userId": 5,
+    "username": "lpykett4",
+    "email": "lpykett4@creativecommons.org",
+    "passwordHash": "$2a$04$PUnuhGnpqhv5ZE9e0un3leJUw52Y7gefi8PmmDXn5m3P.PNDUvoFe",
+    "firstName": "Laina",
+    "lastName": "Pykett",
+    "role": "user",
+    "created_at": "8/20/2022",
+    "modified_at": "2/16/2023"
+  }
+  
+]

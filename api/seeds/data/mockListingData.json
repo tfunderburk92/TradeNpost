@@ -1,0 +1,42 @@
+[
+  {
+    "listingId": 1,
+    "itemId": 3,
+    "userId": 1,
+    "expiryDate":"12/10/2024",
+    "created_at": "05/10/2023",
+    "modified_at": "08/5/2023"
+  },
+  {
+    "listingId": 2,
+    "itemId": 2,
+    "userId": 2,
+    "expiryDate":"12/10/2024",
+    "created_at": "05/10/2023",
+    "modified_at": "08/5/2023"
+  },
+  {
+    "listingId": 3,
+    "itemId": 5,
+    "userId": 3,
+    "expiryDate":"12/10/2024",
+    "created_at": "05/10/2023",
+    "modified_at": "08/5/2023"
+  },
+  {
+    "listingId": 4,
+    "itemId": 1,
+    "userId": 4,
+    "expiryDate":"12/10/2024",
+    "created_at": "05/10/2023",
+    "modified_at": "08/5/2023"
+  },
+  {
+    "listingId": 5,
+    "itemId": 4,
+    "userId": 5,
+    "expiryDate":"12/10/2024",
+    "created_at": "05/10/2023",
+    "modified_at": "08/5/2023"
+  }
+]
