@@ -21,14 +21,14 @@ function Register(props) {
   };
 
   const validateInput = () => {
-    //check email is valid using regex
+    //check if email is valid using regex
     const validationArray = []
     const validEmailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if (userData.username.length < 3) {
       const errorMsg = "Please enter a username with more than 3 characters";
       validationArray.push(errorMsg)
     }
-    //check if a fist name is inputted
+    //check if a first name is inputted 
      if (userData.firstname.length === 0) {
       const errorMsg = "Please enter firstname";
       validationArray.push(errorMsg)
@@ -43,7 +43,7 @@ function Register(props) {
       const errorMsg = "Please enter valid zipcode";
       validationArray.push(errorMsg)
     }
-    //check password meets requirments
+    //check password meets requirements
      if (userData.password.length === 0) {
       const errorMsg = "Password must contain at least 8 Characters";
       validationArray.push(errorMsg)
