@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 
 import {List,
   ListItem,
@@ -12,8 +12,43 @@ import {List,
   import WorkIcon from '@mui/icons-material/Work';
 import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 import ManageIcon from '@mui/icons-material/ManageAccounts';
+import ava from '../../images/avatar.jpg'
 
-export default function index() {
+
+export default function Profile() {
+
+  // This is a state to store the data in
+  const [items, setItems] = React.useState([]);
+  const [offers, setOffers] = React.useState([]);
+
+  console.log('items', items)
+  console.log('offers', offers)
+
+  // On page load, we are going to load all items
+  useEffect(() => {
+    const fetchItems = async () => {
+      const response = await fetch('http://localhost:9000/items');
+      const data = await response.json();
+      setItems(data);
+    }
+
+    fetchItems();
+  }, [])
+
+
+    // On page load, we are going to load all offers
+    useEffect(() => {
+      const fetchOffers = async () => {
+        const response = await fetch('http://localhost:9000/offers');
+        const data = await response.json();
+        setOffers(data);
+      }
+  
+      fetchOffers();
+    }, [])
+  
+
+
     return (
       <div className="parent-profile-container">
 
@@ -28,7 +63,7 @@ export default function index() {
 
             <div className="profile-title-container">
                 <div className="profile-inventory-title"><h1>My Inventory</h1></div>
-                <div className="profile-pic-container"><img src="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/85/85e8bc6526fe108e8001e137c4ce2fd95dc1153b_full.jpg" /></div>
+                <div className="profile-pic-container"><img className="avatar-img" src={ava} /></div>
 </div>
             
             
@@ -40,32 +75,21 @@ export default function index() {
   <Paper elevation={3}>
 
 
-          <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-      <ListItemButton>
-        <ListItemAvatar>
-          <Avatar>
-            <ImageIcon />
-          </Avatar>
+              <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
+                {/* We are going to iterate over our items array and display each item */}
+                {items.map(item => (
+                  <ListItemButton>
+
+
+<ListItemAvatar>
+          <Avatar src={item.imageURL} />
         </ListItemAvatar>
-        <ListItemText primary="Image" />
-      </ListItemButton>
-      <ListItemButton>
-        <ListItemAvatar>
-          <Avatar>
-            <WorkIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText primary="Description" secondary="Unopened Box Iphone 14 Promax" />
-      </ListItemButton>
-      <ListItemButton>
-        <ListItemAvatar>
-          <Avatar>
-            <BeachAccessIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText primary="Location" secondary="Charleston,SC 29401" />
-      </ListItemButton>
-    </List>
+
+                    <ListItemText primary={item.itemName} secondary={ item.description} />
+            </ListItemButton>
+            
+          ))}
+          </List>
 
             </Paper>
 
@@ -86,32 +110,23 @@ export default function index() {
 
         <Paper elevation={3}>
 
-<List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-<ListItemButton>
-<ListItemAvatar>
-<Avatar>
-  <ImageIcon />
-</Avatar>
-</ListItemAvatar>
-<ListItemText primary="Image" />
-</ListItemButton>
-<ListItemButton>
-<ListItemAvatar>
-<Avatar>
-  <WorkIcon />
-</Avatar>
-</ListItemAvatar>
-<ListItemText primary="Description" secondary="Unopened Box Iphone 14 Promax" />
-</ListItemButton>
-<ListItemButton>
-<ListItemAvatar>
-<Avatar>
-  <BeachAccessIcon />
-</Avatar>
-</ListItemAvatar>
-<ListItemText primary="Location" secondary="Charleston,SC 29401" />
-</ListItemButton>
-</List>
+
+
+
+
+        <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
+                {/* We are going to iterate over our offers array and display each item */}
+                {offers.map(offer => (
+                  <ListItemButton>
+                    <ListItemText primary={offer.offerDate} secondary={ offer.offerMessage} />
+            </ListItemButton>
+            
+          ))}
+          </List>
+
+
+
+              
 
   </Paper>
 
