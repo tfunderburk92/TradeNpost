@@ -1,0 +1,52 @@
+[
+    {
+    "offerId": 1,
+    "listingId": 2,
+    "userId": 1,
+    "offerDate":"12/10/2024",
+    "offerMessage": "Hi, I am interested in your item, would you like to trade",
+    "itemId": 1,
+    "created_at": "05/10/2023",
+    "modified_at": "08/5/2023"
+  },
+  {
+    "offerId": 2,
+    "listingId": 3,
+    "userId": 2,
+    "offerDate":"12/10/2024",
+    "offerMessage": "Hi, I am interested in your item, would you like to trade",
+    "itemId": 1,
+    "created_at": "05/10/2023",
+    "modified_at": "08/5/2023"
+  },
+  {
+    "offerId": 3,
+    "listingId": 4,
+    "userId": 3,
+    "offerDate":"12/10/2024",
+    "offerMessage": "Hi, I am interested in your item, would you like to trade",
+    "itemId": 1,
+    "created_at": "05/10/2023",
+    "modified_at": "08/5/2023"
+  },
+  {
+    "offerId": 4,
+    "listingId": 1,
+    "userId":4,
+    "offerDate":"12/10/2024",
+    "offerMessage": "Hi, I am interested in your item, would you like to trade",
+    "itemId": 3,
+    "created_at": "05/10/2023",
+    "modified_at": "08/5/2023"
+  },
+  {
+    "offerId": 5,
+    "listingId": 2,
+    "userId":5,
+    "offerDate":"12/10/2024",
+    "offerMessage": "Hi, I am interested in your item, would you like to trade",
+    "itemId": 2,
+    "created_at": "05/10/2023",
+    "modified_at": "08/5/2023"
+  }
+]

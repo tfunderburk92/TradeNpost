@@ -1,0 +1,73 @@
+[
+    {
+    "messageId": 15,
+    "senderId": 200,
+    "recieverId":210,
+    "messageContent": "Hello, how soon can you send item",
+    "timeStamp":"12/10/2024",
+    "messageStat": true,
+    "created_at": "05/10/2023",
+    "modified_at": "08/5/2023"
+  },
+  {
+    "messageId": 16,
+    "senderId": 201,
+    "recieverId":211,
+    "messageContent": "No, item isn't available",
+    "timeStamp":"12/10/2024",
+    "messageStat": false,
+    "created_at": "05/10/2023",
+    "modified_at": "08/5/2023"
+  },
+  {
+    "messageId": 17,
+    "senderId": 202,
+    "recieverId":212,
+    "messageContent": "Do you have anything else to offer",
+    "timeStamp":"12/10/2024",
+    "messageStat": true,
+    "created_at": "05/10/2023",
+    "modified_at": "08/5/2023"
+  },
+  {
+    "messageId": 18,
+    "senderId": 203,
+    "recieverId":213,
+    "messageContent": "Yes, I will take that item",
+    "timeStamp":"12/10/2024",
+    "messageStat": false,
+    "created_at": "05/10/2023",
+    "modified_at": "08/5/2023"
+  },
+  {
+    "messageId": 19,
+    "senderId": 204,
+    "recieverId":214,
+    "messageContent": "No,I am not interested in your trade",
+    "timeStamp":"12/10/2024",
+    "messageStat": true,
+    "created_at": "05/10/2023",
+    "modified_at": "08/5/2023"
+  },
+  {
+    "messageId": 20,
+    "senderId": 205,
+    "recieverId":215,
+    "messageContent": "I would love to trade with you",
+    "timeStamp":"12/10/2024",
+    "messageStat": true,
+    "created_at": "05/10/2023",
+    "modified_at": "08/5/2023"
+  },
+  {
+    "messageId": 21,
+    "senderId": 206,
+    "recieverId":216,
+    "messageContent": "Do you have anything else to offer",
+    "timeStamp":"12/10/2024",
+    "messageStat": false,
+    "created_at": "05/10/2023",
+    "modified_at": "08/5/2023"
+  }
+]
+

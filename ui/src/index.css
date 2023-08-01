@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.login-btn-container {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+
+.MuiAppBar-root {
+  background-color: rgb(1, 12, 12) !important
+}
+
+.search-container {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+
+.home-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 8px;
+}
+
+.home-left {
+
+}
+
+.home-right {
+
+}
+
+.typography {
+  font-weight: bold;
+    font-size: 4rem;
+    line-height: 0.8em;
+    letter-spacing: -4px;
+    margin-top: 0;
+}
+
+
+.xl2 {
+  margin-bottom: 2em;
+}
+
+
+.home-right h2 {
+  margin-top: 4em;
+  padding-left: 2em;
+    font-size: 2em;
+}
