@@ -9,8 +9,8 @@ import { getMe } from "../utility/api";
 //settings for the profile dropdown
 function Navbar() {
 
-	const [anchorElNav, setAnchorElNav] = useState(null);
-	const [anchorElUser, setAnchorElUser] = useState(null);
+  const [anchorElNav, setAnchorElNav] = useState(null);
+  const [anchorElUser, setAnchorElUser] = useState(null);
   const [myData, setMyData] = useState({});
   const settings = ["Profile", "Account", "Logout"];
 
@@ -134,55 +134,7 @@ function Navbar() {
 							</Link>
 						</Box>
 
-						<Box sx={{ flexGrow: 0 }}>
-							<Tooltip>
-								{/* profile avatar on far right side */}
-								{isUserLoggedIn() ? (
-									<IconButton
-										onClick={handleOpenUserMenu}
-										sx={{ p: 0 }}>
-										<Avatar alt="Profile" />
-									</IconButton>
-								) : (
-									<Link to="/login">
-										<Button
-											sx={{
-												// display: { xs: 'none', md: 'flex' },
-												mr: 1,
-												textDecoration: "none",
-												color: "white",
-												flex: "row-reverse",
-											}}>
-											Login
-										</Button>
-									</Link>
-								)}
-							</Tooltip>
-							<Menu
-								sx={{ mt: "45px" }}
-								id="menu-appbar"
-								anchorEl={anchorElUser}
-								anchorOrigin={{
-									vertical: "top",
-									horizontal: "right",
-								}}
-								keepMounted
-								transformOrigin={{
-									vertical: "top",
-									horizontal: "right",
-								}}
-								open={Boolean(anchorElUser)}
-								onClose={handleCloseUserMenu}
-							>
-								<MenuItem><Link to='/profile' style={{ textDecoration: 'none'}}>Profile</Link></MenuItem>
-								<MenuItem><Link to='/account/settings' style={{ textDecoration: 'none' }}>Account Settings</Link></MenuItem>
-								<MenuItem><Link to='/userpanel' style={{ textDecoration: 'none' }}>User Panel</Link></MenuItem>
-                {!isUserAdmin ? null : 
-                  <MenuItem><Link to='/adminpanel' style={{ textDecoration: 'none' }}>Admin Panel</Link></MenuItem>
-                }
-								<MenuItem onClick={() => Logout()}><Link to='/' style={{ textDecoration: 'none' }}>Logout</Link></MenuItem>
-							</Menu>
-						</Box>
+						
 					</Toolbar>
 				</Container>
 			</AppBar>
