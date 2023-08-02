@@ -10,7 +10,7 @@ export default function NewItemForm() {
 
     const navigate = useNavigate()
 
-    // This state stores the data from all our inputs
+    // This state stores the data from all inputs
     const [data, setData] = useState({})
     const [error, setError] = useState("")
 
@@ -25,7 +25,7 @@ export default function NewItemForm() {
     }
 
 
-    // This submit will only work if there is data in both the itemName and quantity fields
+    // This submit will only work if there is data in both the itemName and quantity input fields
     const onSubmit = async (event) => {
         event.preventDefault();
 
