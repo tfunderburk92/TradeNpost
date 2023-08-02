@@ -9,8 +9,6 @@ exports.findAll = async () => {
 
 exports.findById = async (id) => {
   const user = await knex("users").where("userId", id).first("*");
-
-
   return user;
 };
 
@@ -57,7 +55,6 @@ exports.modifyUser = async (userData, id) => {
   console.log(userData)
   return await knex('users').update(userData).where('userId', id) // return the data you need excluding the password
 }
-
 exports.findByUsername = async (username) => {
   // Find the first user in the database with the username
   const user = await knex("users").where("username", username).first("*");

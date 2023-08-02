@@ -1,5 +1,5 @@
 const { Router } = require('express')
-const { showAllItems } = require('./controller')
+const { showAllItems, getById, updateItem, deleteItem, addItem } = require('./controller')
 
 //import middleware
 const { authenticate } = require('../../middleware/auth')
@@ -10,11 +10,10 @@ const router = new Router()
 // define routes
 
 router.get('/', showAllItems)
-// router.get('/:id', showReportById)
-// router.get('/userid/:userId', showReportByUserId)
-// router.get('/county/:county', showCountyReports)
-// router.put('/update/', authenticate, updateUserReports )
-// router.delete('/delete/:id', authenticate, deleteUserReport)
-
+router.post('/', addItem)
+router.get('/:itemId', getById)
+router.delete('/:itemId', deleteItem)
+router.patch('/:itemId', updateItem)
+// router.patch was used to modify data
 // exporting router
 module.exports = router

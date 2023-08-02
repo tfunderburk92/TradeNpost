@@ -17,14 +17,11 @@ import ava from '../../images/avatar.jpg'
 
 export default function Profile() {
 
-  // This is a state to store the data in
+  // State to store the data in
   const [items, setItems] = React.useState([]);
   const [offers, setOffers] = React.useState([]);
 
-  console.log('items', items)
-  console.log('offers', offers)
-
-  // On page load, we are going to load all items
+  //  loads all items when the page is loaded
   useEffect(() => {
     const fetchItems = async () => {
       const response = await fetch('http://localhost:9000/items');
@@ -36,7 +33,7 @@ export default function Profile() {
   }, [])
 
 
-    // On page load, we are going to load all offers
+    // Loads all offers when page is loaded
     useEffect(() => {
       const fetchOffers = async () => {
         const response = await fetch('http://localhost:9000/offers');
@@ -76,7 +73,7 @@ export default function Profile() {
 
 
               <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-                {/* We are going to iterate over our items array and display each item */}
+                {/* iterate over our items array and displays each item */}
                 {items.map(item => (
                   <ListItemButton>
 
@@ -115,7 +112,7 @@ export default function Profile() {
 
 
         <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-                {/* We are going to iterate over our offers array and display each item */}
+                {/* iterates over our offers array and display each item */}
                 {offers.map(offer => (
                   <ListItemButton>
                     <ListItemText primary={offer.offerDate} secondary={ offer.offerMessage} />
