@@ -70,7 +70,9 @@ exports.getById = async (req, res) => {
 exports.addItem = async (req, res) => {
   try {
     const itemData = req.body;
+   
     const item = await createItem(itemData);
+    return res.json(item);
   } catch (error) {
     console.log(error);
     return res.status(500).json({ message: "Internal Server Error" });

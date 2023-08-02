@@ -7,6 +7,8 @@ import Register from './views/Register'
 import Login from './views/Login'
 import Profile from './views/Profile'
 import Success from './views/Register/success'
+import NewItemForm from './views/Items/NewItemForm'
+import EditItemForm from './views/Items/EditItemForm'
 
 
 function App() {
@@ -20,7 +22,11 @@ function App() {
             <Route path="/register/success" element={<Success/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/profile" element={<Profile/>}/>
-            <Route path="*" element={<NotFound/>}/>
+            <Route path="*" element={<NotFound />} />
+            {/* Item routes */}
+            <Route path="/item" element={<NewItemForm/>}/>
+            <Route path="/item/:itemId" element={<EditItemForm/>}/>
+            {/* Item routes */}
           </Route>
         </Routes>
       </ThemeContextProvider>

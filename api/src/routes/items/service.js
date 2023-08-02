@@ -37,6 +37,7 @@ exports.modifyItem = async (itemData, itemId) => {
 
 // creates an item in the database
 exports.createItem = async (itemData) => {
+ 
   // Insert the user into the database and return
   return await knex("item")
     .insert(
