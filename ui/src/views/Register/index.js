@@ -7,10 +7,9 @@ import { useNavigate } from "react-router-dom";
 function Register(props) {
   const [userData, setUserdata] = useState({
     username: "",
-    firstname: "",
-    lastname: "",
+    firstName: "",
+    lastName: "",
     email: "",
-    zipcode: "",
     password: "",
   });
   const [validationErrorArray, setValidationErrorArray] = useState([]);
@@ -29,18 +28,13 @@ function Register(props) {
       validationArray.push(errorMsg)
     }
     //check if a first name is inputted 
-     if (userData.firstname.length === 0) {
-      const errorMsg = "Please enter firstname";
+     if (userData.firstName.length === 0) {
+      const errorMsg = "Please enter firstName";
       validationArray.push(errorMsg)
     }
     // check if last name is inputted
-     if (userData.lastname.length === 0) {
-      const errorMsg = "Please enter lastname";
-      validationArray.push(errorMsg)
-    }
-    //check if zipcode is valid
-     if (userData.zipcode.length < 5) {
-      const errorMsg = "Please enter valid zipcode";
+     if (userData.lastName.length === 0) {
+      const errorMsg = "Please enter lastName";
       validationArray.push(errorMsg)
     }
     //check password meets requirements
@@ -109,8 +103,8 @@ function Register(props) {
               First Name:
               <input
                 type="text"
-                name="firstname"
-                value={userData.firstname}
+                name="firstName"
+                value={userData.firstName}
                 onChange={handleChange}
               />
             </label>
@@ -120,8 +114,8 @@ function Register(props) {
               Last Name:
               <input
                 type="text"
-                name="lastname"
-                value={userData.lastname}
+                name="lastName"
+                value={userData.lastName}
                 onChange={handleChange}
               />
             </label>
@@ -133,17 +127,6 @@ function Register(props) {
                 type="text"
                 name="email"
                 value={userData.email}
-                onChange={handleChange}
-              />
-            </label>
-          </Grid>
-          <Grid item xs={8}>
-            <label>
-              Zip Code:
-              <input
-                type="text"
-                name="zipcode"
-                value={userData.zipcode}
                 onChange={handleChange}
               />
             </label>

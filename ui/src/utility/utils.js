@@ -40,6 +40,7 @@ export const setToken = (token) => {
 
 /**
  * Removes the current session token from local storage.
+ * Essentially, what this means is that the user is logged out
  *
  * @function
  * @returns {boolean} - Always returns true.

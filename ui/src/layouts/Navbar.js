@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import {Paper, AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, Avatar, Button, Tooltip, MenuItem } from "@mui/material";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import NotificationsIcon from "@mui/icons-material/Notifications";
+import LogoutIcon from '@mui/icons-material/Logout';
 import { getToken, isUserLoggedIn, setToken, clearToken } from "../utility/utils";
 import { getMe } from "../utility/api";
 
@@ -14,15 +15,7 @@ function Navbar() {
   const [myData, setMyData] = useState({});
   const settings = ["Profile", "Account", "Logout"];
 
-//    useEffect(() => {
-//     if (isUserLoggedIn()) {
-//       const getMyData = async () => {
-//         const me = await getMe();
-//         setMyData(me);
-//       };
-//       getMyData();
-//     }
-//   }, []);
+
 
   const isUserAdmin = () => {
     if (myData.role === "admin") {
@@ -30,10 +23,10 @@ function Navbar() {
     }
 		return false
   };
-
+// This function logs the user out.
   function Logout() {
     clearToken();
-    window.location.reload(false);
+    window.location.replace("/");
   }
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -116,9 +109,11 @@ function Navbar() {
 							}}>
 
 
-
-<Link to="/login"><Button variant="contained" color="secondary" style={{marginRight: '14px'}}>Log in</Button></Link>
-<Link to="/register">   <Button variant="outlined" color="secondary" style={{marginRight: '14px'}}>Register</Button></Link>
+{/* If user is logged in this profile button will appear in the navbar */}
+{isUserLoggedIn() ? <Link to="/profile"><Button variant="contained" color="secondary" style={{marginRight: '14px'}}>Profile</Button></Link> : (<>
+	<Link to="/login"><Button variant="contained" color="secondary" style={{marginRight: '14px'}}>Log in</Button></Link>
+	<Link to="/register">   <Button variant="outlined" color="secondary" style={{marginRight: '14px'}}>Register</Button></Link>
+</>)}
 
 	
 							{/* link the notification bell icon to /notifications */}
@@ -132,6 +127,14 @@ function Navbar() {
 									}}
 								/>
 							</Link>
+
+
+
+									{/* This button logs user out */}
+							{isUserLoggedIn() &&  <IconButton color="primary"   aria-label="logout" onClick={Logout}>
+								<LogoutIcon />
+							</IconButton>}
+
 						</Box>
 
 						
