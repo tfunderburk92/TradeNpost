@@ -8,7 +8,7 @@ exports.findAll = async () => {
 };
 
 exports.findById = async (id) => {
-  const user = await knex("users").where("id", id).first("*");
+  const user = await knex("users").where("userId", id).first("*");
 
 
   return user;
@@ -18,19 +18,19 @@ exports.insertUser = async (data) => {
 
   const createdUser = await knex("users")
     .insert(data)
-    .returning(["id", "firstName", "lastName", "email"]);
+    .returning(["userId", "firstName", "lastName", "email"]);
   return createdUser;
 };
 
 exports.destroyUser = async (id) => {
-  const deletedUser = await knex("users").delete().where("id", id);
+  const deletedUser = await knex("users").delete().where("userId", id);
   return deletedUser;
 };
 
 exports.modifyUser = async (userData, id) => {
   // Insert the user into the database and return
   console.log(userData)
-  return await knex('users').update(userData).where('id', id) // return the data you need excluding the password
+  return await knex('users').update(userData).where('userId', id) // return the data you need excluding the password
 }
 
 exports.createUser = async (userData) => {
@@ -47,15 +47,15 @@ exports.createUser = async (userData) => {
     .insert({
       ...userData,
       username: username,
-      password: hash, //store the hash. DO NOT store a plaintext password!
+      passwordHash: hash, //store the hash. DO NOT store a plaintext password!
     })
-    .returning(["id", "username", "role"]); // return the data you need excluding the password
+    .returning(["userId", "username", "role"]); // return the data you need excluding the password
 };
 
 exports.modifyUser = async (userData, id) => {
   // Insert the user into the database and return
   console.log(userData)
-  return await knex('users').update(userData).where('id', id) // return the data you need excluding the password
+  return await knex('users').update(userData).where('userId', id) // return the data you need excluding the password
 }
 
 exports.findByUsername = async (username) => {
