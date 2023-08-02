@@ -5,6 +5,7 @@ import Layout from './layouts'
 import ThemeContextProvider from './context/themeContext'
 import Register from './views/Register'
 import Login from './views/Login'
+import Profile from './views/Profile'
 import Success from './views/Register/success'
 
 
@@ -18,6 +19,7 @@ function App() {
             <Route path="/register" element={<Register/>}/>
             <Route path="/register/success" element={<Success/>}/>
             <Route path="/login" element={<Login/>}/>
+            <Route path="/profile" element={<Profile/>}/>
             <Route path="*" element={<NotFound/>}/>
           </Route>
         </Routes>
