@@ -9,6 +9,8 @@ import {List,
   Tooltip ,
   TextField,
   Avatar, Paper} from '@mui/material';
+  import EditIcon from '@mui/icons-material/Edit';
+  import DeleteIcon from '@mui/icons-material/Delete'
   import ImageIcon from '@mui/icons-material/Image';
   import WorkIcon from '@mui/icons-material/Work';
 import BeachAccessIcon from '@mui/icons-material/BeachAccess';
@@ -119,7 +121,25 @@ export default function Profile() {
               <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
                 {/* iterate over our items array and displays each item */}
                 {items.map(item => (
-                  <ListItemButton key={item.itemId}>
+                  <ListItem key={item.itemId}
+                  
+
+                  secondaryAction={
+                    <>
+                    
+                    <IconButton edge="end" aria-label="delete">
+                      <EditIcon />
+                    </IconButton>
+                    <IconButton edge="end" aria-label="delete">
+                      <DeleteIcon />
+                    </IconButton>
+                    
+                    </>
+
+                  }
+                  
+                  
+                  >
 
 
 <ListItemAvatar>
@@ -127,7 +147,7 @@ export default function Profile() {
         </ListItemAvatar>
 
                     <ListItemText primary={item.itemName} secondary={ item.description} />
-            </ListItemButton>
+            </ListItem>
             
           ))}
           </List>
@@ -159,7 +179,7 @@ export default function Profile() {
                 {/* iterates over our offers array and display each item */}
                 {offers.map(offer => (
                   <ListItemButton>
-                    <ListItemText primary={offer.offerDate} secondary={ offer.offerMessage} />
+                    <ListItemText /* primary={new Date(offer.offerDate).toDateString()} */ secondary={ offer.offerMessage} />
             </ListItemButton>
             
           ))}
@@ -175,6 +195,15 @@ export default function Profile() {
           
     </div>
 
+
+
+<ul className="footer-links-profile">
+  <li><a href="mailto:test@test.com">Contact</a></li>
+  <li><a href="#">Info</a></li>
+  <li><a href="#">Chat</a></li>
+</ul>
+        
+        
     </div>
   )
 }
