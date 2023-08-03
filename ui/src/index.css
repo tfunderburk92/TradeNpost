@@ -145,3 +145,23 @@ code {
     height: 120px;
     border-radius: 50%;
   }
+
+
+  .newitem-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 8px;
+    margin: 0 auto !important;
+    min-width: 500px;
+  }
+
+  .error {
+    color: red
+  }
+
+
+  .search-inventory-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }

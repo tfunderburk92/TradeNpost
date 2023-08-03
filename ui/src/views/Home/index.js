@@ -23,6 +23,28 @@ import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 function Home(props) {
 
 
+  const [listings, setListings] = useState([]);
+  const [search, setSearch] = useState("");
+
+
+
+  useEffect(() => {
+    const fetchItems = async () => {
+      const url = search ? `http://localhost:9000/listings/search/${search}` : `http://localhost:9000/listings`
+      // const response = await fetch(`http://localhost:9000/listings`);
+      const response = await fetch(url);
+      const data = await response.json();
+      console.log('data', data)
+      setListings(data);
+    }
+
+    fetchItems();
+  }, [search])
+
+
+  const handleSearchChange = (e) => {
+    setSearch(e.target.value)
+  } 
 
 
   return (
@@ -30,7 +52,7 @@ function Home(props) {
 
 
 <div className="search-container"> 
-<TextField id="outlined-basic" label="Search" variant="outlined" placeholder="Keyword" />
+<TextField id="outlined-basic" onChange={handleSearchChange} label="Search" variant="outlined" placeholder="Keyword" />
   </div>
 
 
@@ -46,36 +68,28 @@ function Home(props) {
 
         </div>
         <div className="home-right">
-          <h2>Popular Posts</h2>
+          <h2>Popular listings</h2>
 
           <Paper elevation={3}>
 
 
           <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-      <ListItemButton>
-        <ListItemAvatar>
-          <Avatar>
-            <ImageIcon />
-          </Avatar>
+     
+
+          {listings.map(item => (
+                  <ListItemButton key={item.itemId}>
+
+
+<ListItemAvatar>
+          <Avatar src={item.imageURL} />
         </ListItemAvatar>
-        <ListItemText primary="Image" />
-      </ListItemButton>
-      <ListItemButton>
-        <ListItemAvatar>
-          <Avatar>
-            <WorkIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText primary="Description" secondary="Unopened Box Iphone 14 Promax" />
-      </ListItemButton>
-      <ListItemButton>
-        <ListItemAvatar>
-          <Avatar>
-            <BeachAccessIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText primary="Location" secondary="Charleston,SC 29401" />
-      </ListItemButton>
+
+                    <ListItemText primary={item.itemName} secondary={ item.description} />
+            </ListItemButton>
+            
+          ))}
+
+              
     </List>
 
             </Paper>

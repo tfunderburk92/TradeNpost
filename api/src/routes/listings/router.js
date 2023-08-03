@@ -1,5 +1,5 @@
 const { Router } = require('express')
-const { showAllListings } = require('./controller')
+const { showAllListings, searchListings } = require('./controller')
 
 //import middleware
 const { authenticate } = require('../../middleware/auth')
@@ -10,6 +10,7 @@ const router = new Router()
 // define routes
 
 router.get('/', showAllListings)
+router.get('/search/:search', searchListings)
 // router.get('/:id', showReportById)
 // router.get('/userid/:userId', showReportByUserId)
 // router.get('/county/:county', showCountyReports)
