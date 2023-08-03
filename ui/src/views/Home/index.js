@@ -68,7 +68,7 @@ function Home(props) {
 
         </div>
         <div className="home-right">
-          <h2>Popular listings</h2>
+          <h2>Popular Postings</h2>
 
           <Paper elevation={3}>
 

@@ -99,7 +99,7 @@ export default function Profile() {
 
             <div className="search-inventory-container">
 
-            <TextField onChange={handleSearchChange} label="Search my inventory" variant="outlined" />
+            <TextField onChange={handleSearchChange} label="Search My Inventory" variant="outlined" />
 
 
             <Tooltip title="Add Item">
