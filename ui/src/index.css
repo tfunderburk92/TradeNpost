@@ -158,3 +158,10 @@ code {
   .error {
     color: red
   }
+
+
+  .search-inventory-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }

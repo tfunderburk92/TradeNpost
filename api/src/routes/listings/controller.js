@@ -1,12 +1,11 @@
 require('dotenv').config()
 
-const { findAllListings } = require('./service')
+const { findAllListings, searchAllListings } = require('./service')
 
 
 exports.showAllListings = async (req, res) => {
     try {
       const allListings = await findAllListings(req.params)
-      console.log('allListings: ', allListings)
       return res.json(allListings)
   
     } catch (error) {
@@ -14,3 +13,18 @@ exports.showAllListings = async (req, res) => {
       return res.status(500).json()
     }
   }
+
+
+
+
+// Returns all listings that are pretty similar to our search criteria
+exports.searchListings = async (req, res) => {
+  try {
+    const foundListings = await searchAllListings(req.params.search)
+    return res.json(foundListings)
+
+  } catch (error) {
+    console.log(error)
+    return res.status(500).json()
+  }
+}

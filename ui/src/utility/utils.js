@@ -1,4 +1,6 @@
 const sessionTokenName = 'session_token'
+const userIdName = 'user_id'
+const usernameId = "username"
 
 /**
  * Retrieves the current session token.
@@ -10,6 +12,19 @@ export const getToken = () => {
   const token = localStorage.getItem(sessionTokenName)
   return token
 }
+
+
+
+export const getUser = () => {
+  const userId = localStorage.getItem(userIdName)
+  return userId
+}
+
+export const getUsername = () => {
+  const username = localStorage.getItem(usernameId)
+  return username
+}
+
 
 /**
  * Checks if a user is currently logged in.
@@ -38,6 +53,25 @@ export const setToken = (token) => {
   return token
 }
 
+export const setUser = (userId) => {
+  if(typeof userId !== 'string') {
+    throw new Error("userId must be type: 'string'")
+  }
+
+  localStorage.setItem(userIdName, String(userId))
+  return userId
+}
+
+
+export const setUsername = (username) => {
+  if(typeof username !== 'string') {
+    throw new Error("userId must be type: 'string'")
+  }
+
+  localStorage.setItem(usernameId, username)
+  return username
+}
+
 /**
  * Removes the current session token from local storage.
  * Essentially, what this means is that the user is logged out
@@ -47,5 +81,10 @@ export const setToken = (token) => {
  */
 export const clearToken = () => {
   localStorage.removeItem(sessionTokenName)
+  return true
+}
+
+export const clearUserId = () => {
+  localStorage.removeItem(userIdName)
   return true
 }

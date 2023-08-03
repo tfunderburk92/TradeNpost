@@ -1,6 +1,6 @@
 import { Grid, Typography} from "@mui/material";
 import { login } from "../../utility/api";
-import { setToken } from "../../utility/utils";
+import { setToken, setUser, setUsername } from "../../utility/utils";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -21,8 +21,9 @@ function Login(props) {
     event.preventDefault();
     try {
       const response = await login(userData);
-      console.log(response.token);
       setToken(response.token);
+      setUser(String(response.user.userId))
+      setUsername(response.user.username)
       navigate("/");
       //submit users token to jwt utility
       //redirect user to success page

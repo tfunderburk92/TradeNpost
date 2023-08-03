@@ -4,7 +4,7 @@ import {Paper, AppBar, Box, Toolbar, IconButton, Typography, Menu, Container, Av
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import LogoutIcon from '@mui/icons-material/Logout';
-import { getToken, isUserLoggedIn, setToken, clearToken } from "../utility/utils";
+import { getToken, isUserLoggedIn, setToken, clearToken, clearUserId } from "../utility/utils";
 import { getMe } from "../utility/api";
 
 //settings for the profile dropdown
@@ -24,8 +24,11 @@ function Navbar() {
 		return false
   };
 // This function logs the user out.
+// And it deletes the token that we got when logging in
+// And also the userId that we got when logging in
   function Logout() {
     clearToken();
+    clearUserId();
     window.location.replace("/");
   }
   const handleOpenNavMenu = (event) => {

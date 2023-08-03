@@ -8,11 +8,40 @@ exports.findAllItems = async () => {
   return results;
 };
 
+
+
+
+
+
+// Returns all items found in our search
+exports.searchAllItems = async (userId, search) => {
+  console.log('search', search)
+  const results = await knex('item')
+              .where('userId', userId)
+              .whereILike('itemName', search)
+              .orWhereILike('description', search)
+
+
+  return results;
+};
+
+
+
+
+
 // gets an item by its ID
 exports.findById = async (itemId) => {
   const item = await knex("item").where("itemId", itemId).first("*");
   return item;
 };
+
+
+// gets all items that have a specific userId
+exports.findByUserId = async (userId) => {
+  const item = await knex("item").where("userId", userId);
+  return item;
+};
+
 
 // Inserts a new item
 exports.insertItem = async (data) => {

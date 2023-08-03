@@ -1,6 +1,6 @@
 require('dotenv').config()
 
-const { findAllItems, createItem, destroyItem,findById, findByItemName, insertItem, modifyItem } = require('./service')
+const { findAllItems, createItem, destroyItem,findById, findByItemName, insertItem, modifyItem, findByUserId, searchAllItems } = require('./service')
 
 
 // Returns all of the items inside the item table
@@ -14,6 +14,26 @@ exports.showAllItems = async (req, res) => {
       return res.status(500).json()
     }
 }
+
+
+
+
+
+// Returns all items that are pretty similar to our search criteria
+exports.searchItems = async (req, res) => {
+  try {
+    const foundItems = await searchAllItems(req.params.userId, req.params.search)
+    return res.json(foundItems)
+
+  } catch (error) {
+    console.log(error)
+    return res.status(500).json()
+  }
+}
+
+
+
+
  
 //  Deletes an item from the item table
 exports.deleteItem = async (req, res) => {
@@ -64,6 +84,34 @@ exports.getById = async (req, res) => {
     return res.status(500).json();
   }
 };
+
+
+
+
+
+
+
+
+//  returns all items that have a specific userId
+exports.getByUserId = async (req, res) => {
+  try {
+    const items = await findByUserId(req.params.userId);
+    console.log(items);
+    if (!items) {
+      return res.json([]);
+    }
+
+    return res.json(items);
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json();
+  }
+};
+
+
+
+
+
 
 
 

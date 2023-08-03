@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-import { getToken } from '../../utility/utils';
+import { getToken, getUser } from '../../utility/utils';
 
 export default function NewItemForm() {
 
@@ -14,8 +14,8 @@ export default function NewItemForm() {
     const [data, setData] = useState({})
     const [error, setError] = useState("")
 
-    //* Whenever an input changes it will send both the name of that input (property) and the event for that input 
-    // and then we set the data to be the previous data, plus the new data
+    //* Whenever an input changes it will send both the name of that input property and the event for that input 
+    // and then set the data to be the previous data, plus the new data
     //* and then we simply set the data to be the previous data, plus the new data
     const onChange = property => event => {
         setData({
@@ -37,7 +37,9 @@ export default function NewItemForm() {
 
 
         setError("");
-        console.log(data)
+        const userId = getUser();
+        console.log('userId typeof', typeof userId)
+        console.log('userId', userId)
 
 
         const token = getToken()
@@ -47,7 +49,7 @@ export default function NewItemForm() {
               "Authorization": `Bearer ${token}`,
               'Content-Type': 'application/json'
             }),
-            body: JSON.stringify(data),
+            body: JSON.stringify({...data, userId: userId}),
         }).then((res) => {
               // this .then means request succeeded
             alert("Item added successfully!")
