@@ -120,7 +120,7 @@ function Navbar() {
 
 	
 							{/* link the notification bell icon to /notifications */}
-							<Link to="/notifications">
+							{/* <Link to="/notifications">
 								<NotificationsIcon
 									sx={{
 										display: { xs: "none", md: "flex" },
@@ -129,7 +129,7 @@ function Navbar() {
 										color: "white",
 									}}
 								/>
-							</Link>
+							</Link>  */}
 
 
 
