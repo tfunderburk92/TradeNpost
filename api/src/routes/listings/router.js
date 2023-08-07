@@ -1,5 +1,5 @@
 const { Router } = require('express')
-const { showAllListings, searchListings } = require('./controller')
+const { showAllListings, searchListings, getById } = require('./controller')
 
 //import middleware
 const { authenticate } = require('../../middleware/auth')
@@ -11,7 +11,8 @@ const router = new Router()
 
 router.get('/', showAllListings)
 router.get('/search/:search', searchListings)
-// router.get('/:id', showReportById)
+// New route that gets a listing by its ID
+router.get('/:listingId', getById)
 // router.get('/userid/:userId', showReportByUserId)
 // router.get('/county/:county', showCountyReports)
 // router.put('/update/', authenticate, updateUserReports )

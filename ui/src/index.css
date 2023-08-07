@@ -173,3 +173,13 @@ code {
     margin: 0 auto;
     margin-bottom: 4em
   }
+
+  .listing-item {
+    text-decoration: none;
+    color: black;
+  }
+
+
+  .listing-detail-container {
+    padding: 8em
+  }

@@ -1,5 +1,6 @@
 import { isUserLoggedIn } from "../../utility/utils"
 import { useEffect, useState } from "react"
+import {Link} from 'react-router-dom'
 import {
   getMe,
   getCoords,
@@ -76,7 +77,8 @@ function Home(props) {
           <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
      
 
-          {listings.map(item => (
+              {listings.map(item => (
+            <Link to={`/listing/${item.itemId}`} className="listing-item">
                   <ListItemButton key={item.itemId}>
 
 
@@ -84,8 +86,9 @@ function Home(props) {
           <Avatar src={item.imageURL} />
         </ListItemAvatar>
 
-                    <ListItemText primary={item.itemName} secondary={ item.description} />
+                    <ListItemText primary={item.itemName} />
             </ListItemButton>
+            </Link>
             
           ))}
 

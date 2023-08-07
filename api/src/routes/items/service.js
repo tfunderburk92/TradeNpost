@@ -13,13 +13,12 @@ exports.findAllItems = async () => {
 
 
 
-// Returns all items found in our search
+// Returns all items found in the search
 exports.searchAllItems = async (userId, search) => {
-  console.log('search', search)
   const results = await knex('item')
               .where('userId', userId)
-              .whereILike('itemName', search)
-              .orWhereILike('description', search)
+              .whereILike('itemName', `%${search}%`)
+              .orWhereILike('description', `%${search}%`)
 
 
   return results;
